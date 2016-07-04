@@ -1,0 +1,5 @@
+cutoffStartMultiplier,1.0
+cutoffEndMultiplier,1.5
+framePadding,15
+minimumMicVolume,0
+ipAddress,192.168.1.170

@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar dialog;
+
+<hey> = hey rafik;
+<cancel> = cancel;
+public <command> = (<hey> | <cancel>);
