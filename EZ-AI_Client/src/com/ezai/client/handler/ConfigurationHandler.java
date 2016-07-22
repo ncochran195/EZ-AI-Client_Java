@@ -9,7 +9,7 @@ import com.ezai.client.service.impl.FileIOService;
 
 public class ConfigurationHandler {
 	private Map<String, String> configuration = null;
-	private static String configFileLocation = "resource/conf.csv";
+	private static String configFileLocation = "/ez-ai_client/conf.csv";
 	
 	public static ConfigurationHandler instance;
 	private ConfigurationHandler() {};
@@ -69,9 +69,9 @@ public class ConfigurationHandler {
 		defaultConfiguration.put("ezaiParseTextURL", "http://$IP_ADDRESS:8080/EZ-AI_Server/REST/textOnlyReply.json?query=$QUERY&deviceId=$DEVICE_ID&isStaged=$IS_STAGED");
 		defaultConfiguration.put("activationKeyword", "hey rafik");
 		defaultConfiguration.put("cancelKeyword", "cancel");
-		defaultConfiguration.put("audioInputFilename", "resource/in.wav");
-		defaultConfiguration.put("audioOutputFilename", "resource/out.wav");
-		defaultConfiguration.put("imageInFilename", "resource/in.jpg");
+		defaultConfiguration.put("audioInputFilename", "/ez-ai_client/in.wav");
+		defaultConfiguration.put("audioOutputFilename", "/ez-ai_client/out.wav");
+		defaultConfiguration.put("imageInFilename", "/ez-ai_client/in.jpg");
 		
 		return defaultConfiguration;
 	}

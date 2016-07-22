@@ -36,12 +36,15 @@ public class CameraService implements ICameraService {
 	private CameraService() throws Exception {
 		//	Load OpenCV platform specific files
 		try {
-			// This needs to be in /usr/lib
-			System.load("/ez-ai/libopencv_java310.so");
+			System.load("/ez-ai_client/libopencv_java310.so");
 		} catch (java.lang.UnsatisfiedLinkError e) {
-			System.out.println("libopencv_java310.dll(WINDOWS) OR libopencv_java310.so(UNIX) CANNOT BE FOUND AT resource/opencv_java310");
-			TestGui.getInstance().addText("libopencv_java310.dll(WINDOWS) OR libopencv_java310.so(UNIX) CANNOT BE FOUND AT resource/opencv_java310");
-			e.printStackTrace();
+			try {
+				System.load("c:\\ez-ai_client\\opencv_java310.dll");
+			} catch (java.lang.UnsatisfiedLinkError e2) {
+				System.out.println("libopencv_java310.dll(WINDOWS) OR libopencv_java310.so(UNIX) CANNOT BE FOUND AT /ez-ai_client/opencv_java310");
+				TestGui.getInstance().addText("libopencv_java310.dll(WINDOWS) OR libopencv_java310.so(UNIX) CANNOT BE FOUND AT /ez-ai_client/opencv_java310");
+				e2.printStackTrace();
+			}
 		}
 
 		//	Open the camera
